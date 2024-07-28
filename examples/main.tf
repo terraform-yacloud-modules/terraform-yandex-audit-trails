@@ -1,6 +1,6 @@
 data "yandex_client_config" "client" {}
 
-module "network_load_balancer" {
+module "audit_trails_trail" {
   source = "../"
 
   name               = "minimal-trail"
