@@ -17,7 +17,7 @@ variable "description" {
 variable "labels" {
   description = "Labels defined by the user"
   type        = map(string)
-  default     = {
+  default = {
     key = "value"
   }
 }

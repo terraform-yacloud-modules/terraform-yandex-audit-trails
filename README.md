@@ -38,19 +38,18 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_data_stream_destination"></a> [data\_stream\_destination](#input\_data\_stream\_destination) | Structure describing destination data stream of the trail | <pre>object({<br>    database_id = string<br>    stream_name = string<br>  })</pre> | `null` | no |
-| <a name="input_description"></a> [description](#input\_description) | Description of the trail | `string` | `null` | no |
-| <a name="input_filter"></a> [filter](#input\_filter) | Structure describing event filtering process for the trail | <pre>object({<br>    path_filter = object({<br>      any_filter = object({<br>        resource_id   = string<br>        resource_type = string<br>      })<br>      some_filter = object({<br>        resource_id   = string<br>        resource_type = string<br>        any_filters = list(object({<br>          resource_id   = string<br>          resource_type = string<br>        }))<br>      })<br>    })<br>    event_filters = list(object({<br>      service = string<br>      categories = list(object({<br>        plane = string<br>        type  = string<br>      }))<br>      path_filter = object({<br>        any_filter = object({<br>          resource_id   = string<br>          resource_type = string<br>        })<br>        some_filter = object({<br>          resource_id   = string<br>          resource_type = string<br>          any_filters = list(object({<br>            resource_id   = string<br>            resource_type = string<br>          }))<br>        })<br>      })<br>    }))<br>  })</pre> | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | Description of the trail | `string` | `"Some trail description"` | no |
 | <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | ID of the folder to which the trail belongs | `string` | n/a | yes |
-| <a name="input_labels"></a> [labels](#input\_labels) | Labels defined by the user | `map(string)` | `{}` | no |
-| <a name="input_logging_destination"></a> [logging\_destination](#input\_logging\_destination) | Structure describing destination log group of the trail | <pre>object({<br>    log_group_id = string<br>  })</pre> | `null` | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | Labels defined by the user | `map(string)` | <pre>{<br>  "key": "value"<br>}</pre> | no |
+| <a name="input_log_group_id"></a> [log\_group\_id](#input\_log\_group\_id) | ID of the log group where logs will be sent | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | Name of the trail | `string` | n/a | yes |
 | <a name="input_service_account_id"></a> [service\_account\_id](#input\_service\_account\_id) | ID of the IAM service account that is used by the trail | `string` | n/a | yes |
-| <a name="input_storage_destination"></a> [storage\_destination](#input\_storage\_destination) | Structure describing destination bucket of the trail | <pre>object({<br>    bucket_name   = string<br>    object_prefix = string<br>  })</pre> | `null` | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_trail_id"></a> [trail\_id](#output\_trail\_id) | ID of the created trail |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## License
