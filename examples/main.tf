@@ -30,10 +30,10 @@ module "logging_group" {
 module "audit_trails" {
   source = "../"
 
-  name               = "a-trail"
+  name               = "audit-trails"
   folder_id          = data.yandex_client_config.client.folder_id
   service_account_id = module.iam_accounts.id
-  log_group_id       = module.logging_group.logging_group_id
+  log_group_id       = module.logging_group.id
 
   depends_on = [module.iam_accounts, module.logging_group]
 }
