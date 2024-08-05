@@ -68,10 +68,4 @@ resource "yandex_audit_trails_trail" "basic_trail" {
     }
   }
 
-  depends_on = [
-    yandex_storage_bucket.audit_logs_bucket,
-    yandex_iam_service_account.audit_sa,
-    yandex_resourcemanager_folder_iam_member.sa-editor,
-    yandex_iam_service_account_static_access_key.sa-static-key
-  ]
 }
