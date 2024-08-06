@@ -28,7 +28,7 @@ module "logging_group" {
 }
 
 module "audit_trails" {
-  source = "../"
+  source = "../.."
 
   name               = "audit-trails"
   folder_id          = data.yandex_client_config.client.folder_id
