@@ -1,0 +1,70 @@
+data "yandex_client_config" "client" {}
+
+resource "yandex_iam_service_account" "audit_sa" {
+  name        = "audit-service-account"
+  description = "Service account for audit trails"
+}
+
+resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
+  service_account_id = yandex_iam_service_account.audit_sa.id
+  description        = "static access key for object storage"
+}
+
+resource "yandex_storage_bucket" "audit_logs_bucket" {
+  bucket     = "my-audit-logs-bucket-apatsev-2024"
+  access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
+  secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
+
+  depends_on = [yandex_resourcemanager_folder_iam_member.sa-editor]
+}
+
+resource "yandex_resourcemanager_folder_iam_member" "sa-editor" {
+  folder_id = data.yandex_client_config.client.folder_id
+  role      = "storage.admin"
+  member    = "serviceAccount:${yandex_iam_service_account.audit_sa.id}"
+
+  depends_on = [yandex_iam_service_account.audit_sa]
+}
+
+resource "yandex_resourcemanager_folder_iam_member" "audit_sa_role" {
+  folder_id = data.yandex_client_config.client.folder_id
+  role      = "audit-trails.viewer"
+  member    = "serviceAccount:${yandex_iam_service_account.audit_sa.id}"
+
+  depends_on = [yandex_iam_service_account.audit_sa]
+}
+
+resource "yandex_audit_trails_trail" "basic_trail" {
+  name        = "a-trail"
+  folder_id   = data.yandex_client_config.client.folder_id
+
+  service_account_id = yandex_iam_service_account.audit_sa.id
+
+  storage_destination {
+    bucket_name = yandex_storage_bucket.audit_logs_bucket.bucket
+    object_prefix = "audit-logs/"
+  }
+
+  filter {
+    path_filter {
+      any_filter {
+        resource_id   = data.yandex_client_config.client.folder_id
+        resource_type = "resource-manager.folder"
+      }
+    }
+    event_filters {
+      service = "storage"
+      categories {
+        plane = "DATA_PLANE"
+        type  = "WRITE"
+      }
+      path_filter {
+        any_filter {
+          resource_id   = data.yandex_client_config.client.folder_id
+          resource_type = "resource-manager.folder"
+        }
+      }
+    }
+  }
+
+}

@@ -6,7 +6,6 @@ module "iam_accounts" {
   name = "iam"
   folder_roles = [
     "admin",
-    "logging.writer",
   ]
   cloud_roles              = []
   enable_static_access_key = false
@@ -28,12 +27,17 @@ module "logging_group" {
 }
 
 module "audit_trails" {
-  source = "../"
+  source = "../../"
 
-  name               = "audit-trails"
-  folder_id          = data.yandex_client_config.client.folder_id
-  service_account_id = module.iam_accounts.id
-  log_group_id       = module.logging_group.id
+  service_account_id         = module.iam_accounts.id
+  enable_log_group_destination = true
+  enable_bucket_destination   = false
+  log_group_name              = module.logging_group.id
+  trail_name                  = "a-trail"
+  trail_description           = "Some trail description"
+  labels                      = {
+    key = "value"
+  }
 
   depends_on = [module.iam_accounts, module.logging_group]
 }

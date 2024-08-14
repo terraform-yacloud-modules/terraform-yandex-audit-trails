@@ -1,33 +1,50 @@
-variable "name" {
-  description = "Name of the trail"
+variable "service_account_id" {
+  type = string
+}
+
+variable "enable_log_group_destination" {
+  description = "Enable log group destination for audit trail"
+  type        = bool
+  default     = false
+}
+
+variable "enable_bucket_destination" {
+  description = "Enable bucket destination for audit trail"
+  type        = bool
+  default     = false
+}
+
+variable "log_group_name" {
+  description = "Name of the log group"
+  type        = string
+  default     = "a-trail"
+}
+
+variable "bucket_name" {
+  description = "Name of the storage bucket"
+  type        = string
+  default     = "audit-logs-bucket"
+}
+
+variable "trail_name" {
+  description = "Name of the audit trail"
   type        = string
 }
 
-variable "folder_id" {
-  description = "ID of the folder to which the trail belongs"
-  type        = string
-}
-
-variable "description" {
-  description = "Description of the trail"
+variable "trail_description" {
+  description = "Description of the audit trail"
   type        = string
   default     = "Some trail description"
 }
 
 variable "labels" {
-  description = "Labels defined by the user"
+  description = "Labels for the audit trail"
   type        = map(string)
-  default = {
-    key = "value"
-  }
+  default     = {}
 }
 
-variable "service_account_id" {
-  description = "ID of the IAM service account that is used by the trail"
+variable "object_prefix" {
+  description = "Prefix for the audit log objects in the bucket"
   type        = string
-}
-
-variable "log_group_id" {
-  description = "ID of the log group where logs will be sent"
-  type        = string
+  default     = "audit-logs/"
 }
