@@ -1,3 +1,3 @@
 variable "blank_name" {
-  default = "terraform-yandex-audit-trails-example-1"
+  default = "terraform-yandex-audit-trails-example-4"
 }
