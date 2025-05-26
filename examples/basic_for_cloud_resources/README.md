@@ -4,6 +4,7 @@ To run this example you need to execute:
 
 ```bash
 export YC_FOLDER_ID='folder_id'
+export YC_CLOUD_ID='cloud-id'
 terraform init
 terraform plan
 terraform apply
