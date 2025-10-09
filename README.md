@@ -42,14 +42,14 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_data_events_filter"></a> [data\_events\_filter](#input\_data\_events\_filter) | Data events list | <pre>list(object({<br>    service         = string<br>    resource_id     = optional(string, null)<br>    resource_type   = string<br>    included_events = optional(list(string), null)<br>    excluded_events = optional(list(string), null)<br>  }))</pre> | `[]` | no |
+| <a name="input_data_events_filter"></a> [data\_events\_filter](#input\_data\_events\_filter) | Data events list | <pre>list(object({<br/>    service         = string<br/>    resource_id     = optional(string, null)<br/>    resource_type   = string<br/>    included_events = optional(list(string), null)<br/>    excluded_events = optional(list(string), null)<br/>  }))</pre> | `[]` | no |
 | <a name="input_data_stream_destination_database_id"></a> [data\_stream\_destination\_database\_id](#input\_data\_stream\_destination\_database\_id) | ID of the YDB hosting the destination data stream | `string` | `null` | no |
 | <a name="input_data_stream_destination_stream_name"></a> [data\_stream\_destination\_stream\_name](#input\_data\_stream\_destination\_stream\_name) | Name of the YDS stream belonging to the specified YDB | `string` | `null` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the trail | `string` | `""` | no |
 | <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | Folder ID | `string` | `null` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | A set of labels | `map(string)` | `{}` | no |
 | <a name="input_logging_destination_log_group_id"></a> [logging\_destination\_log\_group\_id](#input\_logging\_destination\_log\_group\_id) | ID of the log group where logs will be sent | `string` | `null` | no |
-| <a name="input_management_events_filters"></a> [management\_events\_filters](#input\_management\_events\_filters) | Management events list | <pre>list(object({<br>    resource_id   = optional(string, null)<br>    resource_type = string<br>  }))</pre> | `[]` | no |
+| <a name="input_management_events_filters"></a> [management\_events\_filters](#input\_management\_events\_filters) | Management events list | <pre>list(object({<br/>    resource_id   = optional(string, null)<br/>    resource_type = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Trail name | `string` | n/a | yes |
 | <a name="input_service_account_id"></a> [service\_account\_id](#input\_service\_account\_id) | ID of the IAM service account that is used by the trail | `string` | n/a | yes |
 | <a name="input_storage_destination_bucket_name"></a> [storage\_destination\_bucket\_name](#input\_storage\_destination\_bucket\_name) | Name of the destination bucket | `string` | `null` | no |
