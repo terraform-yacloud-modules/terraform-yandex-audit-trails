@@ -57,4 +57,9 @@ module "audit_trails" {
     module.iam_account,
     module.logging_group
   ]
+
+  timeouts = {
+    default = "40m"
+  }
+
 }

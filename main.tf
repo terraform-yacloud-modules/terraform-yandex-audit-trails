@@ -58,4 +58,12 @@ resource "yandex_audit_trails_trail" "main" {
       }
     }
   }
+
+  dynamic "timeouts" {
+    for_each = var.timeouts == null ? [] : [var.timeouts]
+    content {
+      default = try(timeouts.value.default, null)
+    }
+  }
+
 }
