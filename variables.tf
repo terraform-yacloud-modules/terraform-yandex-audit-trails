@@ -85,3 +85,11 @@ variable "data_events_filter" {
   }))
   default = []
 }
+
+variable "timeouts" {
+  description = "Timeout settings for cluster operations"
+  type = object({
+    default = optional(string)
+  })
+  default = null
+}
