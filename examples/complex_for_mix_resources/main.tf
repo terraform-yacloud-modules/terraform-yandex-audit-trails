@@ -45,19 +45,6 @@ module "audit_trails" {
   service_account_id               = module.iam_account.id
   logging_destination_log_group_id = module.logging_group.id
 
-  management_events_filters = [
-
-    # This object will take the current user cloud, that is configured for TF provider
-    {
-      resource_type = "resource-manager.cloud"
-    },
-
-    # This object will take the provided organization ID
-    {
-      resource_id   = "<YOUR_ORG_ID>"
-      resource_type = "organization-manager.organization"
-    }
-  ]
 
   data_events_filter = [
     # These objects will take the current user folder, that is configured for TF provider
@@ -110,13 +97,6 @@ module "audit_trails" {
       resource_type = "resource-manager.folder"
     },
 
-    # This object will take the provided organization ID
-    {
-      service         = "compute"
-      resource_id     = "<YOUR_ORG_ID>"
-      resource_type   = "organization-manager.organization"
-      included_events = ["yandex.cloud.audit.compute.serialssh.ConnectSerialPort"]
-    }
   ]
 
   depends_on = [

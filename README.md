@@ -54,6 +54,7 @@ No modules.
 | <a name="input_service_account_id"></a> [service\_account\_id](#input\_service\_account\_id) | ID of the IAM service account that is used by the trail | `string` | n/a | yes |
 | <a name="input_storage_destination_bucket_name"></a> [storage\_destination\_bucket\_name](#input\_storage\_destination\_bucket\_name) | Name of the destination bucket | `string` | `null` | no |
 | <a name="input_storage_destination_object_prefix"></a> [storage\_destination\_object\_prefix](#input\_storage\_destination\_object\_prefix) | Additional prefix of the uploaded objects. If not specified, objects will be uploaded with prefix equal to trail\_id | `string` | `null` | no |
+| <a name="input_timeouts"></a> [timeouts](#input\_timeouts) | Timeout settings for cluster operations | <pre>object({<br/>    default = optional(string)<br/>  })</pre> | `null` | no |
 
 ## Outputs
 
