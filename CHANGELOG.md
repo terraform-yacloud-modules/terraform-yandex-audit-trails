@@ -1,3 +1,10 @@
+## v2.30.0 - 2026-03-02
+### Chores
+- b32f144 chore(deps): bump hashicorp/setup-terraform from 3 to 4
+
+### Miscellaneous
+- 0c34841 Merge pull request [#57](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/57) from terraform-yacloud-modules/dependabot/github_actions/hashicorp/setup-terraform-4
+
 ## v2.29.0 - 2026-02-23
 ### Chores
 - 3b7a714 chore(deps): bump kvendingoldo/git-flow-action from 2.2.0 to 2.16.0 ([#56](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/56))
