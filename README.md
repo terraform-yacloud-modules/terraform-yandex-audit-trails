@@ -3,7 +3,9 @@
 Terraform module which creates Yandex Cloud Audit Trails resources.
 
 ## Notes
-Pay attention, that at one moment you can use only one destination: logging, storage or data_stream.
+
+- At any time only one destination type can be used: **logging**, **storage**, or **data_stream** ([Audit Trails Trail](https://yandex.cloud/ru/docs/terraform/resources/audit_trails_trail)).
+- When using **storage** destination, set `storage_destination_object_prefix` to define the object key prefix in the bucket (optional, defaults to empty).
 
 ## Examples
 
@@ -18,14 +20,14 @@ maintainers to test your changes and to keep the examples up to date for users. 
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
-| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.72.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
+| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >= 0.72.0, < 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.72.0 |
+| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >= 0.72.0, < 1.0.0 |
 
 ## Modules
 
@@ -53,6 +55,7 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | Trail name | `string` | n/a | yes |
 | <a name="input_service_account_id"></a> [service\_account\_id](#input\_service\_account\_id) | ID of the IAM service account that is used by the trail | `string` | n/a | yes |
 | <a name="input_storage_destination_bucket_name"></a> [storage\_destination\_bucket\_name](#input\_storage\_destination\_bucket\_name) | Name of the destination bucket | `string` | `null` | no |
+| <a name="input_storage_destination_object_prefix"></a> [storage\_destination\_object\_prefix](#input\_storage\_destination\_object\_prefix) | Prefix for audit log objects in the bucket (used when storage\_destination\_bucket\_name is set) | `string` | `""` | no |
 | <a name="input_timeouts"></a> [timeouts](#input\_timeouts) | Timeout settings for cluster operations | <pre>object({<br/>    default = optional(string)<br/>  })</pre> | `null` | no |
 
 ## Outputs

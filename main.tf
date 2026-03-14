@@ -10,7 +10,7 @@ resource "yandex_audit_trails_trail" "main" {
     for_each = var.storage_destination_bucket_name != null ? [1] : []
     content {
       bucket_name   = var.storage_destination_bucket_name
-      object_prefix = var.storage_destination_bucket_name
+      object_prefix = var.storage_destination_object_prefix
     }
   }
 
@@ -28,10 +28,6 @@ resource "yandex_audit_trails_trail" "main" {
       stream_name = var.data_stream_destination_stream_name
     }
   }
-
-  #   resource-manager.folder
-  # organization-manager.organization
-  # resource-manager.cloud
 
   filtering_policy {
     dynamic "management_events_filter" {

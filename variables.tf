@@ -41,6 +41,12 @@ variable "storage_destination_bucket_name" {
   default     = null
 }
 
+variable "storage_destination_object_prefix" {
+  description = "Prefix for audit log objects in the bucket (used when storage_destination_bucket_name is set)"
+  type        = string
+  default     = ""
+}
+
 variable "logging_destination_log_group_id" {
   description = "ID of the log group where logs will be sent"
   type        = string
