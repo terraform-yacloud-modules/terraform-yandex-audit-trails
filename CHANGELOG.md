@@ -1,3 +1,7 @@
+## v2.31.0 - 2026-03-14
+### Bug Fixes
+- beb5600 fix: use object_prefix variable in storage_destination ([#58](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/58))
+
 ## v2.30.0 - 2026-03-02
 ### Chores
 - b32f144 chore(deps): bump hashicorp/setup-terraform from 3 to 4
