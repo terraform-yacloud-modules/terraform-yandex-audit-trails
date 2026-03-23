@@ -1,3 +1,7 @@
+## v2.32.0 - 2026-03-23
+### Chores
+- 1194777 chore(deps): bump actions/cache from 5.0.3 to 5.0.4 ([#59](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/59))
+
 ## v2.31.0 - 2026-03-14
 ### Bug Fixes
 - beb5600 fix: use object_prefix variable in storage_destination ([#58](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/58))
