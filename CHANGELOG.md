@@ -1,3 +1,7 @@
+## v2.35.0 - 2026-06-29
+### Chores
+- ff4e425 chore(deps): bump actions/cache from 5.0.5 to 6.1.0 ([#62](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/62))
+
 ## v2.34.0 - 2026-06-23
 ### Chores
 - d0059bf chore(deps): bump actions/checkout from 6 to 7 ([#61](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/61))
