@@ -1,3 +1,7 @@
+## v2.36.0 - 2026-08-04
+### Chores
+- 09f560d chore(deps): bump bridgecrewio/checkov-action from 12 to 12.3114.0 ([#63](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/63))
+
 ## v2.35.0 - 2026-06-29
 ### Chores
 - ff4e425 chore(deps): bump actions/cache from 5.0.5 to 6.1.0 ([#62](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/62))
