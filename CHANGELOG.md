@@ -1,3 +1,10 @@
+## v2.41.0 - 2026-09-01
+### Bug Fixes
+- 4e8b68b fix: передача folder_id в примере с приоритетом tfvars над YC_FOLDER_ID
+
+### Miscellaneous
+- e00ff08 Merge pull request [#67](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/67) from terraform-yacloud-modules/feature/add-folder-id-tfvars
+
 ## v2.40.0 - 2026-08-31
 ### Chores
 - 6c20451 chore(deps): bump bridgecrewio/checkov-action ([#68](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/68))
