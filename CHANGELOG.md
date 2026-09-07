@@ -1,3 +1,7 @@
+## v2.42.0 - 2026-09-07
+### Chores
+- 5c0aaa1 chore(deps): bump bridgecrewio/checkov-action ([#69](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/69))
+
 ## v2.41.0 - 2026-09-01
 ### Bug Fixes
 - 4e8b68b fix: передача folder_id в примере с приоритетом tfvars над YC_FOLDER_ID
