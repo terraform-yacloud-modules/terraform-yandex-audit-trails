@@ -1,3 +1,7 @@
+## v2.44.0 - 2026-09-21
+### Chores
+- 7839689 chore(deps): bump bridgecrewio/checkov-action ([#71](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/71))
+
 ## v2.43.0 - 2026-09-14
 ### Chores
 - cea89e1 chore(deps): bump bridgecrewio/checkov-action ([#70](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/70))
