@@ -1,3 +1,7 @@
+## v2.52.0 - 2026-11-18
+### Miscellaneous
+- 2f12abd ci: run semver job only on push to main ([#79](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/79))
+
 ## v2.51.0 - 2026-11-16
 ### Chores
 - 3b10331 chore(deps): bump bridgecrewio/checkov-action ([#78](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/78))
