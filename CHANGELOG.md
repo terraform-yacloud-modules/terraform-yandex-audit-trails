@@ -1,3 +1,7 @@
+## v2.53.0 - 2026-11-20
+### Miscellaneous
+- 9585d8e ci: pin bridgecrewio/checkov-action to major tag v12 ([#80](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/80))
+
 ## v2.52.0 - 2026-11-18
 ### Miscellaneous
 - 2f12abd ci: run semver job only on push to main ([#79](https://github.com/terraform-yacloud-modules/terraform-yandex-audit-trails/pull/79))
